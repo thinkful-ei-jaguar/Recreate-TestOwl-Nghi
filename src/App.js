@@ -1,26 +1,22 @@
+// Import Library
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+// Import Components
+import Participant from './Participant';
+import Stage from './Stage';
+import Chat from './Chat';
+
+export default function App(props) {
+  console.log(props);
+  const {users} = this.props.users;
+  const {events} = this.props.events;
+  console.log('inside',users);
+  console.log('inside', events);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className='App'>
+      <Participant users={users}/>
+      <Stage users={users}/>
+      <Chat events={events}/>
+    </main>
   );
 }
-
-export default App;

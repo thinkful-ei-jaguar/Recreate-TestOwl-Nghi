@@ -1,12 +1,17 @@
+// Import Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
+// Import Component/Modules
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// Import Data
+import {users} from './users';
+import {events} from './events';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// Get root ID and insert the App elements into the container
+ReactDOM.render(
+    <App users={users} events={events}/>,
+    document.getElementById('root')
+);
