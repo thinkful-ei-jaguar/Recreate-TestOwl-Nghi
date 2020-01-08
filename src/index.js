@@ -12,6 +12,6 @@ import {events} from './events';
 
 // Get root ID and insert the App elements into the container
 ReactDOM.render(
-    <App users={users} events={events}/>,
+    <App users={users} events={events} />,
     document.getElementById('root')
 );

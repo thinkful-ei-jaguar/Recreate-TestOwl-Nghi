@@ -1,14 +1,7 @@
 // Import Library
 import React from 'react';
 
-// Return status of user's session
-function inSession(session) {
-    if(session) {
-        return (<p>In Session</p>);
-    }
-    return (<p>Offline</p>);
-}
-
+import {inSession} from './utilities/inSession';
 // Props
 // id={user.id}
 // name={user.name}
@@ -16,12 +9,12 @@ function inSession(session) {
 // session={user.session}
 export default function PrintUser(props) {
     return (
-        <ul id={props.id}>
+        <li id={props.id}>
             <img src={props.avatar} alt='user'/>
             <div>
                 <p>{props.name}</p>
-                {inSession()}
+                {inSession(props.session)}
             </div>
-        </ul>
+        </li>
     );
 }
